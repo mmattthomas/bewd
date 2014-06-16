@@ -1,0 +1,15 @@
+<h1>Reaction GIFS</h1>
+
+<h3><%= @message %></h3>
+
+<%= form_for Image.new, url: 'add_image' do |f| %>
+	URL: <%=f.url_field :url %>
+	<%= f.submit 'Add ReactionGIF' %>
+<% end %>
+
+<br/></br/>
+
+<% @images.each do |image|%>
+	<img src='<%=image.url%>' /><br/>
+<% end %>
+

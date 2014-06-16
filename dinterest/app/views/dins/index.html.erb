@@ -1,0 +1,21 @@
+<h1>The Index of Dinterest</h1>
+
+<ul>
+	<% @din_posts.each do |din_post| %>
+		<li>
+			<a href='<%=din_post['url']%>'><%=din_post['title']%></a>
+			<br/>
+			<img src='<%=din_post['image_url']%>' width='200'>
+		</li>
+	<% end %>	
+</ul>
+
+<%= form_for DinPost.new, url: '/new_post' do |f| %>
+	<%= f.label :title %> <br />
+	<%= f.text_field :title %> <br/><br/>
+	<%= f.label :url %><br />
+	<%= f.url_field :url %>
+	<br/><br/>
+	<%= f.submit 'Post!' %>
+<% end %>
+	

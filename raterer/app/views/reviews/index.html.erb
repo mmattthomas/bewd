@@ -1,0 +1,21 @@
+<h1>A List of Reviews for this Restaurant</h1>
+
+<%= form_for Review.new, url: 'add' do |f| %>
+	<%= f.label :rating, 'Rating (1-5)'%>
+	<%= f.select :rating, @rate_values %>
+	<%= f.label :comments, 'Comments'%>
+	<%= f.text_area :comments, :cols => "30", :rows => "6" %>
+	<%= f.submit 'Add Review' %>
+<% end %>
+
+<% @reviews.each do |review| %>
+<div class='comment'>
+	<% for i in 1..review.rating do %>
+		<img src="/assets/star.png" />
+	<% end %>
+	<p>
+		<%= review.comments %>
+	</p>
+</div>
+<br />
+<% end %>
