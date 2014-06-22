@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get '/' => 'users#index'
+
+  put '/users/befriend/:id' => 'users#befriend'
   
   post '/make_post' => 'wallposts#create'
   

@@ -10,7 +10,7 @@ gem "mongoid", '~> 4.0.0.rc1', github: 'mongoid/mongoid'    #to get to work for 
 
 # for bootstrap stuff
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-#gem "twitter-bootstrap-rails" #INTERESTING... ONLY USES BOOTSTRAP 2.3 ??
+#gem "twitter-bootstrap-rails" #INTERESTING... ONLY USES BOOTSTRAP 2.3 ??  Nah son, github that shit...
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
 
 # Use SCSS for stylesheets

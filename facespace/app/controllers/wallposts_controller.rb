@@ -1,6 +1,11 @@
 class WallpostsController < ApplicationController
 
+  before_filter :check_signed_in 
+
   def create
+    
+    #check if users is logged in ?
+    
     wallpost = Wallpost.new
     wallpost.post_comment = params[:wallpost][:post_comment]
     wallpost.created = DateTime.now

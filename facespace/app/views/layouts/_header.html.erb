@@ -1,7 +1,10 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
 	<div class="navbar-inner">
-		<div class="container">
-			<%= link_to "FACESPACE", '#', id: "logo" %>
+		<div class="container" style="color:white">
+					FACESPACE
+					<% if @current_user %>
+						: Logged in as <%= @current_user.name %>
+					<% end %>
 			<nav>
 				<ul class="nav nav-pills pull-right">
 					<li><%= link_to "Home", "/" %></li>

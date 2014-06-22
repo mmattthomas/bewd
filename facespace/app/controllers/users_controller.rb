@@ -24,6 +24,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     
     @wallposts = @user.wallposts
+
+    @friends = @user.friends
     
   end
 
@@ -41,5 +43,35 @@ class UsersController < ApplicationController
     session[:user_id] = user.id.to_s
     redirect_to '/'
 	end
+
+  def befriend
+    @user = User.find(params[:id])
+    @wallposts = @user.wallposts
+
+    #add current user to this users' list of friends (?)
+    myself = User.find(session[:user_id])
+    
+    already_friends = false
+    
+    #check if you're already friends with this user
+    @user.friends.each do |fr|
+      if fr.id = myself.id 
+        already_friends=true
+      end
+    end
+    
+    if already_friends
+      flash[:info] = "You are already friends"
+    else
+      @user.friends << myself
+      @user.save
+
+      flash[:success] = "You've got a new friend!"
+    end
+    
+    @friends = @user.friends
+    render :show
+
+  end
 
 end
