@@ -12,7 +12,7 @@ gem "mongoid", '~> 4.0.0.rc1', github: 'mongoid/mongoid'    #to get to work for 
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 #gem "twitter-bootstrap-rails" #INTERESTING... ONLY USES BOOTSTRAP 2.3 ??  Nah son, github that shit...
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
-
+gem 'mongoid-paperclip', :require => "mongoid_paperclip"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

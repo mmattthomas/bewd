@@ -1,6 +1,11 @@
 class User
 	include Mongoid::Document
 	include ActiveModel::SecurePassword
+	include Mongoid::Paperclip
+
+  
+  has_mongoid_attached_file :image
+	validates_attachment_file_name :image, :matches => [/png\Z/, /jpe?g\Z/]
   
 	has_many :wallposts
 

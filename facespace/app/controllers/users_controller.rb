@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     user.bio = params[:user][:bio]
     user.password = params[:user][:password]
     user.password_confirmation = params[:user][:password_confirmation]
+    user.image = params[:user][:image]
     user.save!
     session[:user_id] = user.id.to_s
     redirect_to '/'
@@ -37,6 +38,9 @@ class UsersController < ApplicationController
     user = User.new
     user.email = params[:user][:email]
     user.name = params[:user][:name]
+    user.name = params[:user][:name]
+    user.bio = params[:user][:bio]
+    user.image = params[:user][:image]
     user.password = params[:user][:password]
     user.password_confirmation = params[:user][:password_confirmation]
     user.save!
